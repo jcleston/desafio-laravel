@@ -12,7 +12,18 @@ class NoticiaController extends Controller
     public function index(){
         //$noticias = Noticia::all();
 
-        $noticias = Noticia::where("id_user", Auth::user()->id)->get();
+        $search = request('search');
+
+        if($search){
+            
+            $noticias = Noticia::where([
+                ['titulo', 'like', '%' . $search . '%']
+            ])->where("id_user", Auth::user()->id)->get();
+            
+
+        }else{
+            $noticias = Noticia::where("id_user", Auth::user()->id)->get();
+        }
 
         return view('noticia.index', compact('noticias'));
     }

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cadastrar Notícia') }}
+            {{ __('Notícias') }}
         </h2>
     </x-slot>
 
@@ -9,6 +9,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <x-sucess-status class="mb-4" :status="session('message')" />
+
+            <form action="/noticias" method="GET">
+                <x-input-label for="search" value="Pesquisar" />
+                <x-text-input id="search" class="block mt-1 w-full" type="text" name="search" value="" autofocus />
+                <x-primary-button class="ml-3">Pesquisar</x-primary-button>
+            </form>
 
             <div class="py-4 px-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <table>
@@ -35,7 +41,7 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <x-primary-button class="btn btn-danger">Deletar</x-primary-button>                                    
+                                    <x-primary-button class="btn btn-danger">Deletar</x-primary-button>
                                 </form>
                             </td>
                         </tr>
