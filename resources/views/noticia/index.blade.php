@@ -31,7 +31,12 @@
                                 <a href="{{ url('/editar-noticia/'.$noticia->id) }}" class="btn btn-primary">Editar</a>
                             </td>
                             <td>
-                                <a href="{{ url('/deletar-noticia/'.$noticia->id) }}" class="btn btn-danger">Deletar</a>
+                                <form action="{{ url('deletar-noticia/'.$noticia->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <x-primary-button class="btn btn-danger">Deletar</x-primary-button>                                    
+                                </form>
                             </td>
                         </tr>
                         @empty

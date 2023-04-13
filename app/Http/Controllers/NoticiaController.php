@@ -60,4 +60,10 @@ class NoticiaController extends Controller
 
         return redirect('/noticias')->with('message','Notícia editada com sucesso!');
     }
+
+    public function destroy($id_noticia)
+    {
+        $noticia = Noticia::find($id_noticia)->delete();
+        return redirect('/noticias')->with('message','Notícia deletada com sucesso!');
+    }
 }
