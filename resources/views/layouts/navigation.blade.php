@@ -19,6 +19,10 @@
                     <x-nav-link :href="url('cadastrar-noticia')" :active="request()->routeIs('cadastrar-noticia')">
                         {{ __('Cadastrar Notícia') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="url('noticias')" :active="request()->routeIs('noticias')">
+                        {{ __('Notícias') }}
+                    </x-nav-link>
                 </div>
             </div>
 

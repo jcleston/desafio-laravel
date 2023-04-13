@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::controller(App\Http\Controllers\NoticiaController::class)->group(function () {
+    Route::get('/noticias', 'index')->middleware(['auth', 'verified'])->name('index');
     Route::get('/cadastrar-noticia', 'create')->middleware(['auth', 'verified'])->name('cadastrar-noticia');
     Route::post('/cadastrar-noticia', 'store')->middleware(['auth', 'verified'])->name('cadastrar-noticia');
 });
