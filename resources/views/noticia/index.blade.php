@@ -13,11 +13,13 @@
             <form action="/noticias" method="GET">
                 <x-input-label for="search" value="Pesquisar" />
                 <x-text-input id="search" class="block mt-1 w-full" type="text" name="search" value="" autofocus />
-                <x-primary-button class="ml-3">Pesquisar</x-primary-button>
+                </br>
+                <x-primary-button>Pesquisar</x-primary-button>
             </form>
+            </br>
 
             <div class="py-4 px-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <table>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Id</th>

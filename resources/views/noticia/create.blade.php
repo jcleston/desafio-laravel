@@ -26,7 +26,7 @@
                     <x-text-input id="descricao" class="block mt-1 w-full" type="text" name="descricao" :value="old('descricao')" required autofocus />
                 </div>
 
-                <x-primary-button class="ml-3">{{ __('Cadastrar') }}</x-primary-button>
+                <x-primary-button class="cl-1">{{ __('Cadastrar') }}</x-primary-button>
 
             </form>
 
